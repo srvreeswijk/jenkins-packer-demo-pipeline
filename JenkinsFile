@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 script{
-                    sh returnStdout: true, script: 'cd jenkins-packer-demo-job1 && sh build.sh'
+                    sh returnStdout: true, script: 'cd jenkins-packer-demo-job1 && /bin/bash -c build.sh'
                 }
             }
         }
