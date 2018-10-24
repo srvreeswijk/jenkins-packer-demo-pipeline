@@ -18,11 +18,7 @@ pipeline {
         stage('Deploy in Staging') {
             steps {
                 script{
-                    jenkins-packer-demo-job2
-                    sh returnStdout: true, script: '''aws s3 cp s3://terraform-state-a2b634h/amivar amivar.tf
-                    touch mykey
-                    touch mykey.pub
-                    terraform apply -auto-approve -var APP_INSTANCE_COUNT=1 -target aws_instance.app-instance'''
+                    sh "cd jenkins-packer-demo-job2 && ./build.sh"
                 }
             }
         }
