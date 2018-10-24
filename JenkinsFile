@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 script{
-                    sh "./jenkins-packer-demo-job1/build.sh"
+                    sh "cd jenkins-packer-demo-job1 && ./build.sh"
                 }
             }
         }
